@@ -1904,4 +1904,26 @@
     <string name="user_image_take_photo" msgid="1280274310152803669">"Сделать снимок"</string>
     <string name="user_image_choose_photo" msgid="7940990613897477057">"Выбрать из Галереи"</string>
     <string name="regulatory_info_text" msgid="5623087902354026557"></string>
+
+    <!-- CYANOGENMOD EDITS START -->
+
+    <!-- Automatic brightness customization -->
+    <string name="light_sensor_current_value">Текущее показание датчика: <xliff:g id="light_level">%d</xliff:g> лк</string>
+    <string name="auto_brightness_dialog_title">Уровни автоматической подсветки</string>
+    <string name="auto_brightness_level_format"><xliff:g id="level">%1$s</xliff:g> лк</string>
+    <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e лк</string>
+    <string name="auto_brightness_adjust_button">Регулировка</string>
+    <string name="auto_brightness_reset_button">Сброс</string>
+    <string name="auto_brightness_split_dialog_title">Разделить уровни яркости</string>
+    <string name="auto_brightness_reset_dialog_title">Сбросить уровни?</string>
+    <string name="auto_brightness_reset_confirmation">Все уровни подсветки будут сброшены до значений по умолчанию.</string>
+    <string name="auto_brightness_split_lux_format">Деление позиции (между <xliff:g id="min">%1$d</xliff:g> и <xliff:g id="max">%2$d</xliff:g> лк)</string>
+    <string name="auto_brightness_level_options">Настройки уровня освещённости</string>
+    <string name="auto_brightness_menu_edit_lux">Диапазон яркости</string>
+    <string name="auto_brightness_menu_split">Разделить</string>
+    <string name="auto_brightness_menu_remove">Удалить</string>
+
+
+    <!-- **** CYANOGENMOD ADDITIONS END **** -->
+
 </resources>
