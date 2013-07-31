@@ -65,4 +65,10 @@ erlaubt die Duplizierung einer Zeile in eine zweite Zeile, um zusätzliche Stüt
 Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverlauf entfernt werden.
     </string>
 
+    <string name="auto_brightness_sensitivity_title">Empfindlichkeit anpassen</string>
+    <string name="auto_brightness_sensitivity_verylow">Sehr Niedrig</string>
+    <string name="auto_brightness_sensitivity_low">Niedrig</string>
+    <string name="auto_brightness_sensitivity_medium">Mittel</string>
+    <string name="auto_brightness_sensitivity_high">Hoch</string>
+    <string name="auto_brightness_sensitivity_veryhigh">Sehr Hoch</string>
 </resources>
