@@ -61,7 +61,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_WIFI_DISPLAY = "wifi_display";
-
+    private static final String KEY_ALLOW_ALL_ROTATIONS = "allow_all_rotations";
+	
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private DisplayManager mDisplayManager;
@@ -69,6 +70,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mAccelerometer;
     private WarnedListPreference mFontSizePref;
     private CheckBoxPreference mNotificationPulse;
+    private CheckBoxPreference mAllowAllRotations; 
 
     private final Configuration mCurConfig = new Configuration();
     
@@ -77,7 +79,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private WifiDisplayStatus mWifiDisplayStatus;
     private Preference mWifiDisplayPreference;
-
+	
     private final RotationPolicy.RotationPolicyListener mRotationPolicyListener =
             new RotationPolicy.RotationPolicyListener() {
         @Override
@@ -100,7 +102,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             // Display settings.  However, is still available in Accessibility settings.
             getPreferenceScreen().removePreference(mAccelerometer);
         }
-
+        mAllowAllRotations = (CheckBoxPreference) findPreference(KEY_ALLOW_ALL_ROTATIONS);
+        mAllowAllRotations.setChecked(Settings.System.getBoolean(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.ALLOW_ALL_ROTATIONS, false)); 
+				
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
                 && getResources().getBoolean(
@@ -350,6 +355,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist screen timeout setting", e);
             }
+		} else if (preference == mAllowAllRotations) {
+            Settings.System.putBoolean(getContentResolver(), Settings.System.ALLOW_ALL_ROTATIONS,
+                    mAllowAllRotations.isChecked()); 
+            return true;
         }
         if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);

@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
+    
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/display_settings"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
@@ -27,10 +27,16 @@
                 android:title="@string/wallpaper_settings_title"
                 android:fragment="com.android.settings.WallpaperTypeSettings" />
 
+                
         <CheckBoxPreference
             android:key="accelerometer"
             android:title="@string/accelerometer_title"/>
 
+        <CheckBoxPreference
+            android:key="allow_all_rotations"
+            android:title="@string/allow_all_rotations"
+            android:defaultValue="false" /> 
+    
         <ListPreference
                 android:key="screen_timeout"
                 android:title="@string/screen_timeout"
