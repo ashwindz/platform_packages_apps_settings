@@ -34,7 +34,7 @@
 
         <CheckBoxPreference
             android:key="allow_all_rotations"
-            android:title="@string/allow_all_rotations"
+            android:title="@string/allow_all_rotations_title"
             android:defaultValue="false" /> 
     
         <ListPreference
