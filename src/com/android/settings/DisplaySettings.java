@@ -61,8 +61,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String KEY_WIFI_DISPLAY = "wifi_display";
-    private static final String KEY_ALLOW_ALL_ROTATIONS = "allow_all_rotations_title";
-	
+    private static final String KEY_ALLOW_ALL_ROTATIONS = "allow_all_rotations";
+    private static final String STATUS_BAR_BATTERY = "status_bar_battery";    
+    
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private DisplayManager mDisplayManager;
@@ -76,10 +77,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     
     private ListPreference mScreenTimeoutPreference;
     private Preference mScreenSaverPreference;
+    private ListPreference mStatusBarBattery;
 
     private WifiDisplayStatus mWifiDisplayStatus;
     private Preference mWifiDisplayPreference;
-	
+    
     private final RotationPolicy.RotationPolicyListener mRotationPolicyListener =
             new RotationPolicy.RotationPolicyListener() {
         @Override
@@ -105,14 +107,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mAllowAllRotations = (CheckBoxPreference) findPreference(KEY_ALLOW_ALL_ROTATIONS);
         mAllowAllRotations.setChecked(Settings.System.getBoolean(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.ALLOW_ALL_ROTATIONS, false)); 
-				
+                
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
                 && getResources().getBoolean(
                         com.android.internal.R.bool.config_dreamsSupported) == false) {
             getPreferenceScreen().removePreference(mScreenSaverPreference);
         }
-        
+
         mScreenTimeoutPreference = (ListPreference) findPreference(KEY_SCREEN_TIMEOUT);
         final long currentTimeout = Settings.System.getLong(resolver, SCREEN_OFF_TIMEOUT,
                 FALLBACK_SCREEN_TIMEOUT_VALUE);
@@ -120,6 +122,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mScreenTimeoutPreference.setOnPreferenceChangeListener(this);
         disableUnusableTimeouts(mScreenTimeoutPreference);
         updateTimeoutPreferenceDescription(currentTimeout);
+
+        // status bar battery
+        mStatusBarBattery = (ListPreference) getPreferenceScreen().findPreference(
+                STATUS_BAR_BATTERY);
+        int statusBarBattery = Settings.System.getInt(getActivity().getApplicationContext()
+                .getContentResolver(),
+                Settings.System.STATUS_BAR_BATTERY, 0);
+        mStatusBarBattery.setValue(String.valueOf(statusBarBattery));
+        mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+        mStatusBarBattery.setOnPreferenceChangeListener(this);         
+
 
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
@@ -341,6 +354,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_LIGHT_PULSE,
                     value ? 1 : 0);
             return true;
+        } else if (preference == mAllowAllRotations) {
+            Settings.System.putBoolean(getContentResolver(), Settings.System.ALLOW_ALL_ROTATIONS,
+                    mAllowAllRotations.isChecked()); 
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -355,9 +372,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist screen timeout setting", e);
             }
-		} else if (preference == mAllowAllRotations) {
-            Settings.System.putBoolean(getContentResolver(), Settings.System.ALLOW_ALL_ROTATIONS,
-                    mAllowAllRotations.isChecked()); 
+        } else if (preference == mStatusBarBattery) {
+            int statusBarBattery = Integer.valueOf((String) objValue);
+            int index = mStatusBarBattery.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_BATTERY, statusBarBattery);
+            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
             return true;
         }
         if (KEY_FONT_SIZE.equals(key)) {

@@ -16,11 +16,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
 <!-- Allow All Rotations -->
-    <string name="allow_all_rotations_title">Enable full 180 degree rotations</string>
-
+    <string name="allow_all_rotations_title">Aktiviere volle 180 Grad Rotation</string>
+    
 <!-- Status bar battery -->
-    <string name="status_bar_battery_title">Battery status style</string>
+    <string name="status_bar_battery_title">Batterie Symbol</string>
     <string name="status_bar_style_icon">Icon</string>
-    <string name="status_bar_style_hidden">Hidden</string>
-    <string name="status_bar_battery_status_percentage">Icon &amp; Percentage</string>	
+    <string name="status_bar_style_hidden">Versteckt</string>
+    <string name="status_bar_battery_status_percentage">Symbol &amp; Prozent</string> 
 </resources>
