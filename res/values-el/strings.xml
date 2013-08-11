@@ -1903,24 +1903,4 @@
     <string name="user_image_choose_photo" msgid="7940990613897477057">"Επιλογή φωτογραφιών από τη Συλλογή"</string>
     <string name="regulatory_info_text" msgid="5623087902354026557"></string>
 
-    <!-- CYANOGENMOD EDITS START -->
-
-    <!-- Automatic brightness customization -->
-    <string name="light_sensor_current_value">Τρέχουσα τιμή του αισθητήρα φωτός: <xliff:g id="light_level">%d</xliff:g> lux</string>
-    <string name="auto_brightness_dialog_title">Επίπεδα αυτόματης φωτεινότητας</string>
-    <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
-    <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
-    <string name="auto_brightness_brightness_format"><xliff:g id="percent">%s</xliff:g>%%</string>
-    <string name="auto_brightness_adjust_button">Ρύθμιση</string>
-    <string name="auto_brightness_reset_button">Επαναφορά</string>
-    <string name="auto_brightness_split_dialog_title">Διαχωρισμός επιπέδου φωτεινότητας</string>
-    <string name="auto_brightness_reset_dialog_title">Επαναφορά επιπέδων;</string>
-    <string name="auto_brightness_reset_confirmation">Θα γίνει επαναφορά όλων των επιπέδων φωτεινότητας στις προεπιλεγμένες ρυθμίσεις τους.</string>
-    <string name="auto_brightness_split_lux_format">Θέση διαχωρισμού (μεταξύ <xliff:g id="min">%1$d</xliff:g> και <xliff:g id="max">%2$d</xliff:g> lux)</string>
-    <string name="auto_brightness_level_options">Επιλογές επιπέδων φωτός</string>
-    <string name="auto_brightness_menu_edit_lux">Εύρος φωτεινότητας περιβάλλοντος</string>
-    <string name="auto_brightness_menu_split">Διαχωρισμός</string>
-    <string name="auto_brightness_menu_remove">Αφαίρεση</string>
-
-    <!-- **** CYANOGENMOD ADDITIONS END **** -->
-</resources>
+  </resources>
