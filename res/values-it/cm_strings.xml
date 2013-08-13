@@ -28,7 +28,6 @@
     <string name="auto_brightness_reset_confirmation">Tutti i livelli di luminosità saranno ripristinati ai rispettivi valori di default.</string>
     <string name="auto_brightness_split_lux_format">Soglia (tra <xliff:g id="min">%1$d</xliff:g> e <xliff:g id="max">%2$d</xliff:g> lux)</string>
     <string name="auto_brightness_level_options">Impostazioni livelli luminosità</string>
-    <string name="auto_brightness_menu_edit_lux">Luminosità ambiente</string>
     <string name="auto_brightness_menu_split">Dividi</string>
     <string name="auto_brightness_menu_remove">Rimuovi</string>
     <string name="auto_brightness_preview">Anteprima</string>

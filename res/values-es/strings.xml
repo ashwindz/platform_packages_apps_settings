@@ -1916,7 +1916,6 @@
     <string name="auto_brightness_reset_confirmation">Todos los niveles de brillo serán restablecidos a los valores por defecto.</string>
     <string name="auto_brightness_split_lux_format">Valor para división (entre <xliff:g id="min">%1$d</xliff:g> y <xliff:g id="max">%2$d</xliff:g> lux)</string>
     <string name="auto_brightness_level_options">Opciones de nivel de luz</string>
-    <string name="auto_brightness_menu_edit_lux">Editar</string>
     <string name="auto_brightness_menu_split">Dividir</string>
     <string name="auto_brightness_menu_remove">Eliminar</string>
 
