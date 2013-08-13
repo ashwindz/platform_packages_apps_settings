@@ -18,7 +18,7 @@
 <!-- Category Title -->
     <string name="sima_category">SiMa Customizations</string>
 
- <!-- Navigation Bar Height -->
+<!-- Navigation Bar Height -->
     <string name="navigation_bar_height">Navigation bar height</string>
     <string name="navigation_bar_height_48">48dp (default)</string>
     <string name="navigation_bar_height_44">44dp</string>
@@ -29,7 +29,7 @@
     <string name="navigation_bar_height_24">24dp</string>
     <string name="navigation_bar_height_20">20dp</string>
     <string name="navigation_bar_height_0">0dp (hide)</string>
-	
+    
 <!-- Allow All Rotations -->
     <string name="allow_all_rotations_title">Enable full 180 degree rotations</string>
 
@@ -42,4 +42,20 @@
  <!-- Quick Unlock Pin -->
     <string name="lockscreen_quick_unlock_control_title">Quick Unlock on lockscreen</string>
 
+<!-- Powermenu Options -->
+    <string name="powermenu_title">Power menu</string>
+    <string name="powermenu_prefs_always">Always</string>
+    <string name="powermenu_prefs_onlyunlocked">Only while unlocked</string>
+    <string name="powermenu_prefs_never">Never</string>
+
+    <string name="powermenu_reboot_prefs_title">Reboot</string>
+    <string name="powermenu_reboot_prefs_summary">%1$s visible</string>
+    <string name="powermenu_shutdown_prefs_title">Shutdown</string>
+    <string name="powermenu_shutdown_prefs_summary">%1$s visible</string>
+    <string name="powermenu_airplanemode_prefs_title">Airplane Mode</string>
+    <string name="powermenu_airplanemode_prefs_summary">%1$s visible</string>
+    <string name="powermenu_silentmode_prefs_title">Silent Mode</string>
+    <string name="powermenu_silentmode_prefs_summary">%1$s visible</string>
+    <string name="powermenu_userswitch_prefs_title">User Selection</string>
+    <string name="powermenu_userswitch_prefs_summary">%1$s visible</string>
 </resources>

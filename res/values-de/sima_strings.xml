@@ -17,7 +17,7 @@
 <!-- Category Title -->
     <string name="sima_category">SiMa Anpassungen</string>
 
- <!-- Navigation Bar Height -->
+<!-- Navigation Bar Height -->
     <string name="navigation_bar_height">Höhe Navigationsbalken</string>
     <string name="navigation_bar_height_48">48dp (Vorgabe)</string>
     <string name="navigation_bar_height_44">44dp</string>
@@ -40,4 +40,21 @@
     
  <!-- Quick Unlock Pin -->
     <string name="lockscreen_quick_unlock_control_title">Lockscreen schnell entsperren</string>
+
+<!-- Powermenu Options -->
+    <string name="powermenu_title">Auswahl Stromschalter</string>
+    <string name="powermenu_prefs_always">Immer</string>
+    <string name="powermenu_prefs_onlyunlocked">Nur wenn Entriegelt</string>
+    <string name="powermenu_prefs_never">Niemals</string>
+
+    <string name="powermenu_reboot_prefs_title">Neustart</string>
+    <string name="powermenu_reboot_prefs_summary">%1$s sichtbar</string>
+    <string name="powermenu_shutdown_prefs_title">Ausschalten</string>
+    <string name="powermenu_shutdown_prefs_summary">%1$s sichtbar</string>
+    <string name="powermenu_airplanemode_prefs_title">Flugzeugmodus</string>
+    <string name="powermenu_airplanemode_prefs_summary">%1$s sichtbar</string>
+    <string name="powermenu_silentmode_prefs_title">Stumm-Modus</string>
+    <string name="powermenu_silentmode_prefs_summary">%1$s sichtbar</string>
+    <string name="powermenu_userswitch_prefs_title">Benutzerauswahl</string>
+    <string name="powermenu_userswitch_prefs_summary">%1$s Sichtbar</string>
 </resources>
