@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 MartinRo from XDA
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- Category Title -->
+    <string name="sima_category">Personalizzazioni SiMa</string>
+
+<!-- Navigation Bar Height -->
+    <string name="navigation_bar_height">Altezza barra di navigazione</string>
+    <string name="navigation_bar_height_48">48dp (default)</string>
+    <string name="navigation_bar_height_44">44dp</string>
+    <string name="navigation_bar_height_40">40dp</string>
+    <string name="navigation_bar_height_36">36dp</string>
+    <string name="navigation_bar_height_32">32dp</string>
+    <string name="navigation_bar_height_28">28dp</string>
+    <string name="navigation_bar_height_24">24dp</string>
+    <string name="navigation_bar_height_20">20dp</string>
+    <string name="navigation_bar_height_0">0dp (nascosta)</string>
+    
+<!-- Allow All Rotations -->
+    <string name="allow_all_rotations_title">Abilita rotazione completa di 180°</string>
+
+<!-- Status bar battery -->
+    <string name="status_bar_battery_title">Stile icona batteria</string>
+    <string name="status_bar_style_icon">Icona</string>
+    <string name="status_bar_style_hidden">Nascosta</string>
+    <string name="status_bar_battery_status_percentage">Icona &amp; Percentuale</string>
+    
+ <!-- Quick Unlock Pin -->
+    <string name="lockscreen_quick_unlock_control_title">Sblocco veloce nella schermata di blocco</string>
+
+<!-- Powermenu Options -->
+    <string name="powermenu_title">Menu accensione esteso</string>
+    <string name="powermenu_prefs_always">Sempre visibile</string>
+    <string name="powermenu_prefs_onlyunlocked">Solo visible quando sbloccato</string>
+    <string name="powermenu_prefs_never">Mai visibile</string>
+
+    <string name="powermenu_reboot_prefs_title">Riavvia</string>
+    <string name="powermenu_reboot_prefs_summary">%1$s</string>
+    <string name="powermenu_shutdown_prefs_title">Spegni</string>
+    <string name="powermenu_shutdown_prefs_summary">%1$s</string>
+    <string name="powermenu_airplanemode_prefs_title">Modalità aereo</string>
+    <string name="powermenu_airplanemode_prefs_summary">%1$s</string>
+    <string name="powermenu_silentmode_prefs_title">Modalità silenzioso</string>
+    <string name="powermenu_silentmode_prefs_summary">%1$s</string>
+    <string name="powermenu_userswitch_prefs_title">Selezione utente</string>
+    <string name="powermenu_userswitch_prefs_summary">%1$s</string>	
+    <string name="powermenu_screenshot_prefs_title">Screenshot</string>
+    <string name="powermenu_screenshot_prefs_summary">%1$s</string>	
+</resources>
