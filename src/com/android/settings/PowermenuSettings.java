@@ -39,12 +39,14 @@ public class PowermenuSettings extends SettingsPreferenceFragment implements OnP
     private static final String KEY_POWERMENU_AIRPLANEMODE_PREFS ="powermenu_airplanemode_prefs";
     private static final String KEY_POWERMENU_SILENTMODE_PREFS ="powermenu_silentmode_prefs";
     private static final String KEY_POWERMENU_USERSWITCH_PREFS ="powermenu_userswitch_prefs";
+    private static final String KEY_POWERMENU_SCREENSHOT_PREFS ="powermenu_screenshot_prefs";
 
     private ListPreference mPowermenuRebootPrefs;
     private ListPreference mPowermenuShutdownPrefs;
     private ListPreference mPowermenuAirplanemodePrefs;
     private ListPreference mPowermenuSilentmodePrefs;
     private ListPreference mPowermenuUserswitchPrefs;
+    private ListPreference mPowermenuScreenshotPrefs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,7 +95,15 @@ public class PowermenuSettings extends SettingsPreferenceFragment implements OnP
                                  Settings.System.POWERMENU_USERSWITCH_PREFS, 2);
         mPowermenuUserswitchPrefs.setValue(String.valueOf(mPowermenuUserswitchPrefsValue));
         updatePowermenuUserswitchPrefs(mPowermenuUserswitchPrefsValue);
-    }
+
+        // Powermenu Userswitch selection
+        mPowermenuScreenshotPrefs = (ListPreference) prefSet.findPreference(KEY_POWERMENU_SCREENSHOT_PREFS);
+        mPowermenuScreenshotPrefs.setOnPreferenceChangeListener(this);
+        int mPowermenuScreenshotPrefsValue = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                                 Settings.System.POWERMENU_SCREENSHOT_PREFS, 2);
+        mPowermenuScreenshotPrefs.setValue(String.valueOf(mPowermenuScreenshotPrefsValue));
+        updatePowermenuScreenshotPrefs(mPowermenuScreenshotPrefsValue);
+        }
 
    private String getPowerMenuString(int value) {
         Resources res = getResources();
@@ -131,6 +141,10 @@ public class PowermenuSettings extends SettingsPreferenceFragment implements OnP
         mPowermenuUserswitchPrefs.setSummary(getPowerMenuString(value));
     }
 
+    private void updatePowermenuScreenshotPrefs(int value) {
+        mPowermenuScreenshotPrefs.setSummary(getPowerMenuString(value));
+    }
+    
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mPowermenuRebootPrefs) {
             int mPowermenuRebootPrefsValue = Integer.valueOf((String) objValue);
@@ -164,6 +178,13 @@ public class PowermenuSettings extends SettingsPreferenceFragment implements OnP
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.POWERMENU_USERSWITCH_PREFS, mPowermenuUserswitchPrefsValue);
             updatePowermenuUserswitchPrefs(mPowermenuUserswitchPrefsValue);
+            getActivity().recreate();
+            return true;
+        } else if (preference == mPowermenuScreenshotPrefs) {
+            int mPowermenuScreenshotPrefsValue = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.POWERMENU_SCREENSHOT_PREFS, mPowermenuScreenshotPrefsValue);
+            updatePowermenuScreenshotPrefs(mPowermenuScreenshotPrefsValue);
             getActivity().recreate();
             return true;
             }

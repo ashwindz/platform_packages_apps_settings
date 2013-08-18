@@ -55,6 +55,15 @@ limitations under the License.
         android:defaultValue="2" />
 
     <ListPreference
+        android:key="powermenu_screenshot_prefs"
+        android:dialogTitle="@string/powermenu_screenshot_prefs_title"
+        android:title="@string/powermenu_screenshot_prefs_title"
+        android:summary="@string/powermenu_screenshot_prefs_summary"
+        android:entries="@array/entries_powermenu_visible_prefs"
+        android:entryValues="@array/values_powermenu_visible_prefs"
+        android:defaultValue="2" />
+		
+    <ListPreference
         android:key="powermenu_userswitch_prefs"
         android:dialogTitle="@string/powermenu_userswitch_prefs_title"
         android:title="@string/powermenu_userswitch_prefs_title"
